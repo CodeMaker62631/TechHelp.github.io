@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Animation</title>
+  <style>
+    /* Add some basic styling to the link */
+    a {
+      text-decoration: none;
+      color: #333;
+      position: relative;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    /* Add an underline that will be animated */
+    a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #0099ff; /* Set the initial underline color */
+      visibility: hidden;
+      transform: scaleX(0); /* Initially set the width of the underline to zero */
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* When hovering, change the color of the link and expand the underline */
+    a:hover {
+      color: #ff00bb;
+    }
+
+    a:hover::before {
+      visibility: visible;
+      transform: scaleX(1); /* Expand the underline to full width on hover */
+    }
+  </style>
+</head>
+<body>
+  <a href="#">Hover me</a>
+</body>
+</html>
